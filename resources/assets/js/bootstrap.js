@@ -1,22 +1,22 @@
-import Vue from 'vue'
-import lodash from 'lodash'
-import axios from 'axios'
-import Vuetify from 'vuetify'
+import Vue from "vue";
+import lodash from "lodash";
+import axios from "axios";
+import Vuetify from "vuetify";
 
-Vue.use(Vuetify)
+Vue.use(Vuetify);
 
-window.Vue = Vue
+window.Vue = Vue;
 
-window._ = lodash
+window._ = lodash;
 
 window.axios = axios;
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
-let token = document.head.querySelector('meta[name="csrf-token"]');
+let token = document.head.querySelector("meta[name='csrf-token']");
 
 if (token) {
-	window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+	window.axios.defaults.headers.common["X-CSRF-TOKEN"] = token.content;
 } else {
-	console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+	console.error("CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token");
 }

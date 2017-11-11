@@ -1,24 +1,24 @@
-import router from './router';
-import store from './store';
-import './bootstrap';
-import './components';
+import router from "./router";
+import store from "./store";
+import "./bootstrap";
+import "./components";
 
-store.dispatch('auth/setToken')
+store.dispatch("auth/setToken")
 	.then(function () {
-		store.dispatch('auth/fetchUser')
+		store.dispatch("auth/fetchUser")
 			.catch(function () {
-				store.dispatch('auth/clearAuth')
+				store.dispatch("auth/clearAuth")
 				router.replace({
-					name: 'login'
+					name: "login"
 				})
 			})
 	})
 	.catch(function () {
-		store.dispatch('auth/clearAuth')
+		store.dispatch("auth/clearAuth")
 	});
 
 const app = new Vue({
-	el: '#app',
+	el: "#app",
 	router,
 	store
 });

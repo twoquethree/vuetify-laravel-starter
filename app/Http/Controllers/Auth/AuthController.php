@@ -3,11 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\Request;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\JWTAuth;
-use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -69,7 +65,7 @@ class AuthController extends Controller
      */
     public function guard()
     {
-        return Auth::guard();
+        return auth()->guard();
     }
 
     /**

@@ -1132,19 +1132,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch('auth/setToken').then(function () {
-	__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch('auth/fetchUser').catch(function () {
-		__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch('auth/clearAuth');
+__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch("auth/setToken").then(function () {
+	__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch("auth/fetchUser").catch(function () {
+		__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch("auth/clearAuth");
 		__WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */].replace({
-			name: 'login'
+			name: "login"
 		});
 	});
 }).catch(function () {
-	__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch('auth/clearAuth');
+	__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch("auth/clearAuth");
 });
 
 var app = new Vue({
-	el: '#app',
+	el: "#app",
 	router: __WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */],
 	store: __WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */]
 });
@@ -2509,14 +2509,14 @@ window._ = __WEBPACK_IMPORTED_MODULE_1_lodash___default.a;
 
 window.axios = __WEBPACK_IMPORTED_MODULE_2_axios___default.a;
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
-var token = document.head.querySelector('meta[name="csrf-token"]');
+var token = document.head.querySelector("meta[name='csrf-token']");
 
 if (token) {
-	window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+	window.axios.defaults.headers.common["X-CSRF-TOKEN"] = token.content;
 } else {
-	console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+	console.error("CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token");
 }
 
 /***/ }),

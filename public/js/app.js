@@ -1133,20 +1133,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 __WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch('auth/setToken').then(function () {
-  __WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch('auth/fetchUser').catch(function () {
-    __WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch('auth/clearAuth');
-    __WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */].replace({
-      name: 'login'
-    });
-  });
+	__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch('auth/fetchUser').catch(function () {
+		__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch('auth/clearAuth');
+		__WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */].replace({
+			name: 'login'
+		});
+	});
 }).catch(function () {
-  __WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch('auth/clearAuth');
+	__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch('auth/clearAuth');
 });
 
 var app = new Vue({
-  el: '#app',
-  router: __WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */],
-  store: __WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */]
+	el: '#app',
+	router: __WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */],
+	store: __WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */]
 });
 
 /***/ }),

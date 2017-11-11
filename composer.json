@@ -10,6 +10,7 @@
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "spatie/laravel-permission": "^2.7",
+        "tightenco/ziggy": "^0.5.0",
         "tymon/jwt-auth": "1.0.0-rc.1"
     },
     "require-dev": {

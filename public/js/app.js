@@ -3533,31 +3533,34 @@ module.exports = __webpack_require__(73);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__router__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bootstrap__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bootstrap__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components__ = __webpack_require__(66);
 
 
 
 
 
-__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch("auth/setToken").then(function () {
-	__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch("auth/fetchUser").catch(function () {
-		__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch("auth/clearAuth");
-		__WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */].replace({
+
+__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch("auth/setToken").then(function () {
+	console.log('here');
+	__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch("auth/fetchUser").catch(function () {
+		__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch("auth/clearAuth");
+		__WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].replace({
 			name: "login"
 		});
 	});
 }).catch(function () {
-	__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch("auth/clearAuth");
+	__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch("auth/clearAuth");
 });
 
-var app = new Vue({
+var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 	el: "#app",
-	router: __WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */],
-	store: __WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */]
+	router: __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */],
+	store: __WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */]
 });
 
 /***/ }),
@@ -6963,11 +6966,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setToken", function() { return setToken; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkTokenExists", function() { return checkTokenExists; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearAuth", function() { return clearAuth; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_localforage__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_localforage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_localforage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_localforage__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_localforage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_localforage__);
+
 
 
 
@@ -6978,8 +6984,9 @@ var login = function login(_ref, _ref2) {
 	    context = _ref2.context;
 
 	return new Promise(function (resolve, reject) {
-		axios.post(route("login"), payload).then(function (response) {
-			dispatch("setToken", response.data.meta.token).then(function () {
+		__WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(route("login"), payload).then(function (response) {
+			dispatch("setToken", response.data.access_token).then(function () {
+
 				dispatch("fetchUser");
 				resolve(response.data);
 			});
@@ -6993,7 +7000,7 @@ var login = function login(_ref, _ref2) {
 var logout = function logout(_ref3) {
 	var dispatch = _ref3.dispatch;
 
-	return axios.post(route("logout")).then(function () {
+	return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(route("logout")).then(function () {
 		dispatch("clearAuth");
 	});
 };
@@ -7001,7 +7008,7 @@ var logout = function logout(_ref3) {
 var fetchUser = function fetchUser(_ref4) {
 	var commit = _ref4.commit;
 
-	return axios.get(route("me")).then(function (response) {
+	return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(route("me")).then(function (response) {
 		commit("setAuthenticated", true);
 		commit("setUserData", response.data.data);
 	});
@@ -7011,22 +7018,22 @@ var setToken = function setToken(_ref5, token) {
 	var commit = _ref5.commit,
 	    dispatch = _ref5.dispatch;
 
-	if (Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["isEmpty"])(token)) {
+	if (Object(__WEBPACK_IMPORTED_MODULE_1_lodash__["isEmpty"])(token)) {
 		return dispatch("checkTokenExists").then(function (token) {
-			Object(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* setHttpToken */])(token);
+			Object(__WEBPACK_IMPORTED_MODULE_2__helpers__["a" /* setHttpToken */])(token);
 		});
 	}
 
 	commit("setToken", token);
-	Object(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* setHttpToken */])(token);
+	Object(__WEBPACK_IMPORTED_MODULE_2__helpers__["a" /* setHttpToken */])(token);
 };
 
 var checkTokenExists = function checkTokenExists(_ref6, token) {
 	var commit = _ref6.commit,
 	    dispatch = _ref6.dispatch;
 
-	return __WEBPACK_IMPORTED_MODULE_2_localforage___default.a.getItem("authtoken").then(function (token) {
-		if (Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["isEmpty"])(token)) {
+	return __WEBPACK_IMPORTED_MODULE_3_localforage___default.a.getItem("authtoken").then(function (token) {
+		if (Object(__WEBPACK_IMPORTED_MODULE_1_lodash__["isEmpty"])(token)) {
 			return Promise.reject("NO_STORAGE_TOKEN");
 		}
 
@@ -7040,7 +7047,7 @@ var clearAuth = function clearAuth(_ref7, token) {
 	commit("setAuthenticated", false);
 	commit("setUserData", null);
 	commit("setToken", null);
-	Object(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* setHttpToken */])(null);
+	Object(__WEBPACK_IMPORTED_MODULE_2__helpers__["a" /* setHttpToken */])(null);
 };
 
 /***/ }),
@@ -7104,8 +7111,6 @@ var token = document.head.querySelector("meta[name='csrf-token']");
 
 if (token) {
 	window.axios.defaults.headers.common["X-CSRF-TOKEN"] = token.content;
-} else {
-	console.error("CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token");
 }
 
 /***/ }),
@@ -7128,10 +7133,15 @@ if (token) {
 /* 64 */,
 /* 65 */,
 /* 66 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-Vue.component('app', __webpack_require__(67));
-Vue.component('navigation-component', __webpack_require__(70));
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component("app", __webpack_require__(67));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component("navigation-component", __webpack_require__(70));
 
 /***/ }),
 /* 67 */

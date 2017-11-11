@@ -35,11 +35,22 @@ class AuthController extends Controller
     {
         $credentials = $request->only('email', 'password');
 
-        if ($token = $this->guard()->attempt($credentials)) {
+        try {
+            if (!$token = $this->guard()->attempt($credentials)) {
+                return response()->json([
+                    'errors' => [
+                        'root' => 'Could not sign you in with those details.',
+                    ],
+                ], 401);
+            }
             return $this->respondWithToken($token);
+        } catch (JWTException $e) {
+            return response()->json([
+                'errors' => [
+                    'root' => 'Failde',
+                ],
+            ], $e->getStatusCode());
         }
-
-        return response()->json(['error' => 'Unauthorized'], 401);
     }
 
     /**
@@ -75,7 +86,7 @@ class AuthController extends Controller
      */
     public function me()
     {
-        return response()->json($this->guard()->user());
+        return response()->json(['data' => $this->guard()->user()]);
     }
 
     /**

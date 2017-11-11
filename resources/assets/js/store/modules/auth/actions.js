@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {
 	isEmpty
 } from "lodash";
@@ -15,11 +16,12 @@ export const login = ({
 	return new Promise((resolve, reject) => {
 		axios.post(route("login"), payload)
 			.then((response) => {
-				dispatch("setToken", response.data.meta.token)
+				dispatch("setToken", response.data.access_token)
 					.then(() => {
+
 						dispatch("fetchUser");
 						resolve(response.data);
-					})
+					});
 			})
 			.catch((error) => {
 				context.errors = error.response.data.errors;
@@ -40,10 +42,10 @@ export const logout = ({
 export const fetchUser = ({
 	commit
 }) => {
-	return axios.get(route("me"))
+	return axios.post(route("me"))
 		.then((response) => {
 			commit("setAuthenticated", true);
-			commit("setUserData", response.data.data)
+			commit("setUserData", response.data.data);
 		})
 };
 

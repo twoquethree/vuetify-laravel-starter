@@ -9,7 +9,7 @@ export const setToken = (state, token) => {
 		return;
 	}
 	localforage.setItem("authtoken", token);
-}
+};
 
 export const setAuthenticated = (state, boolean) => state.user.authenticated = boolean;
 

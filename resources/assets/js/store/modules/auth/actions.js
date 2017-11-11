@@ -18,12 +18,12 @@ export const login = ({
 				dispatch("setToken", response.data.meta.token)
 					.then(() => {
 						dispatch("fetchUser");
-						resolve(response.data)
+						resolve(response.data);
 					})
 			})
 			.catch((error) => {
 				context.errors = error.response.data.errors;
-				reject(error.response.data.errors)
+				reject(error.response.data.errors);
 			})
 	});
 };

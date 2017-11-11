@@ -8,10 +8,10 @@ const beforeEach = ((to, from, next) => {
 				next({
 					name: "home"
 				});
-				return
+				return;
 			}
 
-			next()
+			next();
 
 		})
 		.catch(() => {
@@ -24,7 +24,7 @@ const beforeEach = ((to, from, next) => {
 			}
 
 			next()
-		})
+		});
 });
 
-export default beforeEach
+export default beforeEach;

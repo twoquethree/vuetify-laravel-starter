@@ -1109,31 +1109,34 @@ module.exports = __webpack_require__(91);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__router__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bootstrap__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bootstrap__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components__);
 
 
 
 
 
-__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch("auth/setToken").then(function () {
-	__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch("auth/fetchUser").catch(function () {
-		__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch("auth/clearAuth");
-		__WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */].replace({
+
+__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch("auth/setToken").then(function () {
+	__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch("auth/fetchUser").catch(function () {
+		__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch("auth/clearAuth");
+		__WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].replace({
 			name: "login"
 		});
 	});
 }).catch(function () {
-	__WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */].dispatch("auth/clearAuth");
+	__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch("auth/clearAuth");
 });
 
-var app = new Vue({
+var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 	el: "#app",
-	router: __WEBPACK_IMPORTED_MODULE_0__router__["a" /* default */],
-	store: __WEBPACK_IMPORTED_MODULE_1__store__["a" /* default */]
+	router: __WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */],
+	store: __WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */]
 });
 
 /***/ }),

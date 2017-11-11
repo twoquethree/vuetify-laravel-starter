@@ -1,6 +1,6 @@
 import {
 	NotFoundComponent
-} from "../components"
+} from "../components";
 
 export default [{
 	path: "*",

@@ -43,7 +43,7 @@ class AuthController extends Controller
                     ],
                 ], 401);
             }
-            
+
             return $this->respondWithToken($token);
         } catch (JWTException $e) {
             return response()->json([

@@ -1070,10 +1070,6 @@ var index_esm = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_rent__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_settings__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_bonus__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__state__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__getters__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__mutations__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__actions__ = __webpack_require__(63);
 
 
 
@@ -1083,22 +1079,13 @@ var index_esm = {
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
 
-
-
-
-
-
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
-  state: __WEBPACK_IMPORTED_MODULE_6__state__["a" /* default */],
-  getters: __WEBPACK_IMPORTED_MODULE_7__getters__,
-  mutations: __WEBPACK_IMPORTED_MODULE_8__mutations__,
-  actions: __WEBPACK_IMPORTED_MODULE_9__actions__,
-  modules: {
-    auth: __WEBPACK_IMPORTED_MODULE_2__modules_auth__["a" /* default */],
-    rent: __WEBPACK_IMPORTED_MODULE_3__modules_rent__["a" /* default */],
-    settings: __WEBPACK_IMPORTED_MODULE_4__modules_settings__["a" /* default */],
-    bonus: __WEBPACK_IMPORTED_MODULE_5__modules_bonus__["a" /* default */]
-  }
+	modules: {
+		auth: __WEBPACK_IMPORTED_MODULE_2__modules_auth__["a" /* default */],
+		rent: __WEBPACK_IMPORTED_MODULE_3__modules_rent__["a" /* default */],
+		settings: __WEBPACK_IMPORTED_MODULE_4__modules_settings__["a" /* default */],
+		bonus: __WEBPACK_IMPORTED_MODULE_5__modules_bonus__["a" /* default */]
+	}
 }));
 
 /***/ }),
@@ -1167,8 +1154,8 @@ var app = new Vue({
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-  mode: 'history',
-  routes: __WEBPACK_IMPORTED_MODULE_2__app_index__["a" /* routes */]
+	mode: "history",
+	routes: __WEBPACK_IMPORTED_MODULE_2__app_index__["a" /* routes */]
 });
 
 router.beforeEach(__WEBPACK_IMPORTED_MODULE_3__beforeEach__["a" /* default */]);
@@ -1211,13 +1198,13 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 /* harmony default export */ __webpack_exports__["a"] = ([{
-  path: '/login',
-  component: __WEBPACK_IMPORTED_MODULE_0__components__["a" /* LoginComponent */],
-  name: 'login',
-  meta: {
-    guest: true,
-    needsAuth: false
-  }
+	path: "/login",
+	component: __WEBPACK_IMPORTED_MODULE_0__components__["a" /* LoginComponent */],
+	name: "login",
+	meta: {
+		guest: true,
+		needsAuth: false
+	}
 }]);
 
 /***/ }),
@@ -1230,7 +1217,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 
 
-var LoginComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('login-component', __webpack_require__(25));
+var LoginComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component("login-component", __webpack_require__(25));
 
 /***/ }),
 /* 25 */
@@ -1592,8 +1579,8 @@ if (false) {
 
 
 /* harmony default export */ __webpack_exports__["a"] = ([{
-  path: '*',
-  component: __WEBPACK_IMPORTED_MODULE_0__components__["a" /* NotFoundComponent */]
+	path: "*",
+	component: __WEBPACK_IMPORTED_MODULE_0__components__["a" /* NotFoundComponent */]
 }]);
 
 /***/ }),
@@ -1606,7 +1593,7 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 
 
-var NotFoundComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('NotFoundComponent', __webpack_require__(31));
+var NotFoundComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component("NotFoundComponent", __webpack_require__(31));
 
 /***/ }),
 /* 31 */
@@ -1725,13 +1712,13 @@ if (false) {
 
 
 /* harmony default export */ __webpack_exports__["a"] = ([{
-  path: '/',
-  component: __WEBPACK_IMPORTED_MODULE_0__components__["a" /* HomeComponent */],
-  name: 'home',
-  meta: {
-    guest: false,
-    needsAuth: true
-  }
+	path: "/",
+	component: __WEBPACK_IMPORTED_MODULE_0__components__["a" /* HomeComponent */],
+	name: "home",
+	meta: {
+		guest: false,
+		needsAuth: true
+	}
 }]);
 
 /***/ }),
@@ -1744,7 +1731,7 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 
 
-var HomeComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('home-component', __webpack_require__(35));
+var HomeComponent = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component("home-component", __webpack_require__(35));
 
 /***/ }),
 /* 35 */
@@ -1868,26 +1855,26 @@ if (false) {
 
 
 var beforeEach = function beforeEach(to, from, next) {
-  __WEBPACK_IMPORTED_MODULE_0__store__["a" /* default */].dispatch('auth/checkTokenExists').then(function () {
-    if (to.meta.guest) {
-      next({
-        name: 'home'
-      });
-      return;
-    }
+	__WEBPACK_IMPORTED_MODULE_0__store__["a" /* default */].dispatch("auth/checkTokenExists").then(function () {
+		if (to.meta.guest) {
+			next({
+				name: "home"
+			});
+			return;
+		}
 
-    next();
-  }).catch(function () {
-    if (to.meta.needsAuth) {
-      __WEBPACK_IMPORTED_MODULE_1_localforage___default.a.setItem('intended', to.name);
-      next({
-        name: 'login'
-      });
-      return;
-    }
+		next();
+	}).catch(function () {
+		if (to.meta.needsAuth) {
+			__WEBPACK_IMPORTED_MODULE_1_localforage___default.a.setItem("intended", to.name);
+			next({
+				name: "login"
+			});
+			return;
+		}
 
-    next();
-  });
+		next();
+	});
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (beforeEach);
@@ -1907,11 +1894,11 @@ var beforeEach = function beforeEach(to, from, next) {
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  namespaced: true,
-  state: __WEBPACK_IMPORTED_MODULE_0__state__["a" /* default */],
-  mutations: __WEBPACK_IMPORTED_MODULE_1__mutations__,
-  getters: __WEBPACK_IMPORTED_MODULE_3__getters__,
-  actions: __WEBPACK_IMPORTED_MODULE_2__actions__
+	namespaced: true,
+	state: __WEBPACK_IMPORTED_MODULE_0__state__["a" /* default */],
+	mutations: __WEBPACK_IMPORTED_MODULE_1__mutations__,
+	getters: __WEBPACK_IMPORTED_MODULE_3__getters__,
+	actions: __WEBPACK_IMPORTED_MODULE_2__actions__
 });
 
 /***/ }),
@@ -1920,10 +1907,10 @@ var beforeEach = function beforeEach(to, from, next) {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  user: {
-    authenticated: false,
-    data: null
-  }
+	user: {
+		authenticated: false,
+		data: null
+	}
 });
 
 /***/ }),
@@ -1943,19 +1930,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var setToken = function setToken(state, token) {
-  if (Object(__WEBPACK_IMPORTED_MODULE_1_lodash__["isEmpty"])(token)) {
-    __WEBPACK_IMPORTED_MODULE_0_localforage___default.a.removeItem('authtoken', token);
-    return;
-  }
-  __WEBPACK_IMPORTED_MODULE_0_localforage___default.a.setItem('authtoken', token);
+	if (Object(__WEBPACK_IMPORTED_MODULE_1_lodash__["isEmpty"])(token)) {
+		__WEBPACK_IMPORTED_MODULE_0_localforage___default.a.removeItem("authtoken", token);
+		return;
+	}
+	__WEBPACK_IMPORTED_MODULE_0_localforage___default.a.setItem("authtoken", token);
 };
 
 var setAuthenticated = function setAuthenticated(state, boolean) {
-  return state.user.authenticated = boolean;
+	return state.user.authenticated = boolean;
 };
 
 var setUserData = function setUserData(state, data) {
-  return state.user.data = data;
+	return state.user.data = data;
 };
 
 /***/ }),
@@ -1985,27 +1972,13 @@ var login = function login(_ref, _ref2) {
 	    context = _ref2.context;
 
 	return new Promise(function (resolve, reject) {
-		axios.post(route('login'), payload).then(function (response) {
-			dispatch('setToken', response.data.meta.token).then(function () {
-				dispatch('fetchUser');
+		axios.post(route("login"), payload).then(function (response) {
+			dispatch("setToken", response.data.meta.token).then(function () {
+				dispatch("fetchUser");
 				resolve(response.data);
-				dispatch('noti', {
-					message: 'Bienvenido a Tu Salario SV',
-					type: 'success'
-				}, {
-					root: true
-				});
 			});
 		}).catch(function (error) {
 			context.errors = error.response.data.errors;
-			if (context.errors.root) {
-				dispatch('noti', {
-					message: 'Credenciales Invalidas',
-					type: 'error'
-				}, {
-					root: true
-				});
-			}
 			reject(error.response.data.errors);
 		});
 	});
@@ -2014,17 +1987,17 @@ var login = function login(_ref, _ref2) {
 var logout = function logout(_ref3) {
 	var dispatch = _ref3.dispatch;
 
-	return axios.post(route('logout')).then(function () {
-		dispatch('clearAuth');
+	return axios.post(route("logout")).then(function () {
+		dispatch("clearAuth");
 	});
 };
 
 var fetchUser = function fetchUser(_ref4) {
 	var commit = _ref4.commit;
 
-	return axios.get(route('me')).then(function (response) {
-		commit('setAuthenticated', true);
-		commit('setUserData', response.data.data);
+	return axios.get(route("me")).then(function (response) {
+		commit("setAuthenticated", true);
+		commit("setUserData", response.data.data);
 	});
 };
 
@@ -2033,12 +2006,12 @@ var setToken = function setToken(_ref5, token) {
 	    dispatch = _ref5.dispatch;
 
 	if (Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["isEmpty"])(token)) {
-		return dispatch('checkTokenExists').then(function (token) {
+		return dispatch("checkTokenExists").then(function (token) {
 			Object(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* setHttpToken */])(token);
 		});
 	}
 
-	commit('setToken', token);
+	commit("setToken", token);
 	Object(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* setHttpToken */])(token);
 };
 
@@ -2046,9 +2019,9 @@ var checkTokenExists = function checkTokenExists(_ref6, token) {
 	var commit = _ref6.commit,
 	    dispatch = _ref6.dispatch;
 
-	return __WEBPACK_IMPORTED_MODULE_2_localforage___default.a.getItem('authtoken').then(function (token) {
+	return __WEBPACK_IMPORTED_MODULE_2_localforage___default.a.getItem("authtoken").then(function (token) {
 		if (Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["isEmpty"])(token)) {
-			return Promise.reject('NO_STORAGE_TOKEN');
+			return Promise.reject("NO_STORAGE_TOKEN");
 		}
 
 		return Promise.resolve(token);
@@ -2058,9 +2031,9 @@ var checkTokenExists = function checkTokenExists(_ref6, token) {
 var clearAuth = function clearAuth(_ref7, token) {
 	var commit = _ref7.commit;
 
-	commit('setAuthenticated', false);
-	commit('setUserData', null);
-	commit('setToken', null);
+	commit("setAuthenticated", false);
+	commit("setUserData", null);
+	commit("setToken", null);
 	Object(__WEBPACK_IMPORTED_MODULE_1__helpers__["a" /* setHttpToken */])(null);
 };
 
@@ -2075,11 +2048,11 @@ var clearAuth = function clearAuth(_ref7, token) {
 
 
 var setHttpToken = function setHttpToken(token) {
-  if (Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["isEmpty"])(token)) {
-    window.axios.defaults.headers.common['Authorization'] = null;
-  }
+	if (Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["isEmpty"])(token)) {
+		window.axios.defaults.headers.common["Authorization"] = null;
+	}
 
-  window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+	window.axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 };
 
 /***/ }),
@@ -2434,56 +2407,10 @@ var bonus = function bonus(state) {
 };
 
 /***/ }),
-/* 60 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  noti: {
-    message: '',
-    type: 'blue',
-    show: false
-  }
-});
-
-/***/ }),
-/* 61 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "noti", function() { return noti; });
-var noti = function noti(state) {
-  return state.noti;
-};
-
-/***/ }),
-/* 62 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setNoti", function() { return setNoti; });
-var setNoti = function setNoti(state, payload) {
-  state.noti.message = payload.message;
-  state.noti.type = payload.type;
-  state.noti.show = true;
-};
-
-/***/ }),
-/* 63 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "noti", function() { return noti; });
-var noti = function noti(_ref, payload) {
-  var commit = _ref.commit;
-
-  commit('setNoti', payload);
-};
-
-/***/ }),
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
 /* 64 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

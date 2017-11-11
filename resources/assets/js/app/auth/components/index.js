@@ -1,3 +1,3 @@
-import Vue from 'vue'
+import Vue from "vue"
 
-export const LoginComponent = Vue.component('login-component', require('./LoginComponent.vue'))
+export const LoginComponent = Vue.component("login-component", require("./LoginComponent.vue"))

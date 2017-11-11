@@ -1,13 +1,13 @@
 import {
-  LoginComponent
-} from '../components'
+	LoginComponent
+} from "../components"
 
 export default [{
-  path: '/login',
-  component: LoginComponent,
-  name: 'login',
-  meta: {
-    guest: true,
-    needsAuth: false
-  }
+	path: "/login",
+	component: LoginComponent,
+	name: "login",
+	meta: {
+		guest: true,
+		needsAuth: false
+	}
 }, ]

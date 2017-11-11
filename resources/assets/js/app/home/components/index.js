@@ -1,3 +1,3 @@
-import Vue from 'vue'
+import Vue from "vue"
 
-export const HomeComponent = Vue.component('home-component', require('./HomeComponent.vue'))
+export const HomeComponent = Vue.component("home-component", require("./HomeComponent.vue"))

@@ -1,28 +1,30 @@
-import store from '../store'
-import localforage from 'localforage'
+import store from "../store"
+import localforage from "localforage"
 
 const beforeEach = ((to, from, next) => {
-  store.dispatch('auth/checkTokenExists').then(() => {
-    if (to.meta.guest) {
-      next({
-        name: 'home'
-      });
-      return
-    }
+	store.dispatch("auth/checkTokenExists")
+		.then(() => {
+			if (to.meta.guest) {
+				next({
+					name: "home"
+				});
+				return
+			}
 
-    next()
+			next()
 
-  }).catch(() => {
-    if (to.meta.needsAuth) {
-      localforage.setItem('intended', to.name);
-      next({
-        name: 'login'
-      });
-      return
-    }
+		})
+		.catch(() => {
+			if (to.meta.needsAuth) {
+				localforage.setItem("intended", to.name);
+				next({
+					name: "login"
+				});
+				return
+			}
 
-    next()
-  })
+			next()
+		})
 });
 
 export default beforeEach

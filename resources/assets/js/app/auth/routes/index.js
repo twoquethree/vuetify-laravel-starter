@@ -1,6 +1,6 @@
 import {
 	LoginComponent
-} from "../components"
+} from "../components";
 
 export default [{
 	path: "/login",
@@ -10,4 +10,4 @@ export default [{
 		guest: true,
 		needsAuth: false
 	}
-}, ]
+}, ];

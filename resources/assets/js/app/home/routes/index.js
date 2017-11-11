@@ -1,6 +1,6 @@
 import {
 	HomeComponent
-} from "../components"
+} from "../components";
 
 export default [{
 	path: "/",
@@ -10,4 +10,4 @@ export default [{
 		guest: false,
 		needsAuth: true
 	}
-}]
+}];

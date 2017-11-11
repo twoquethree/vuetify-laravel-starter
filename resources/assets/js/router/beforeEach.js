@@ -1,5 +1,5 @@
-import store from "../store"
-import localforage from "localforage"
+import store from "../store";
+import localforage from "localforage";
 
 const beforeEach = ((to, from, next) => {
 	store.dispatch("auth/checkTokenExists")
@@ -20,10 +20,10 @@ const beforeEach = ((to, from, next) => {
 				next({
 					name: "login"
 				});
-				return
+				return;
 			}
 
-			next()
+			next();
 		});
 });
 

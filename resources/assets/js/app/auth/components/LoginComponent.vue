@@ -1,10 +1,10 @@
 <template lang="html">
 
 <v-container>
-    <v-layout align-center justify-center class="h100">
+    <v-layout align-center justify-center class="h-100">
         <v-flex xs12 sm12 md4>
             <v-card light>
-                <v-card-media class="white--text" height="200px" src="../storage/images/material.jpg">
+                <!-- <v-card-media class="white--text" height="200px" src="../storage/images/material.jpg">
                     <v-container fill-height fluid>
                         <v-layout fill-height>
                             <v-flex xs12 align-end flexbox>
@@ -12,7 +12,7 @@
                             </v-flex>
                         </v-layout>
                     </v-container>
-                </v-card-media>
+                </v-card-media> -->
                 <form @submit.prevent="submit">
                     <v-card-text>
                         <v-text-field label="Correo Electronico"
@@ -72,44 +72,44 @@ export default {
 		}
 	},
 	methods: {
-		...mapActions( {
+		...mapActions({
 			login: 'auth/login'
-		} ),
+		}),
 
 		submit() {
-			this.login( {
+			this.login({
 					payload: {
 						email: this.email,
 						password: this.password
 					},
 					context: this
-				} )
-				.then( () => {
+				})
+				.then(() => {
 					this.redirect()
-				} )
-				.catch( ( err ) => {} )
+				})
+				.catch((err) => {})
 		},
 
 		redirect() {
 			this.loading = true
-			localforage.getItem( 'intended' )
-				.then( ( name ) => {
-					if ( isEmpty( name ) ) {
-						this.$router.replace( {
+			localforage.getItem('intended')
+				.then((name) => {
+					if (isEmpty(name)) {
+						this.$router.replace({
 							name: 'home'
-						} )
+						})
 						this.loading = false
 						return
 					}
-					this.$router.replace( {
+					this.$router.replace({
 						name: name
-					} )
+					})
 					this.loading = false
-				} )
+				})
 		},
 
-		cleanFields( field ) {
-			return this.errors[ field ] = []
+		cleanFields(field) {
+			return this.errors[field] = []
 		}
 	}
 }

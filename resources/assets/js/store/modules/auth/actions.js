@@ -1,10 +1,10 @@
 import {
 	isEmpty
-} from "lodash"
+} from "lodash";
 import {
 	setHttpToken
-} from "../../../helpers"
-import localforage from "localforage"
+} from "../../../helpers";
+import localforage from "localforage";
 
 export const login = ({
 	dispatch
@@ -33,7 +33,7 @@ export const logout = ({
 }) => {
 	return axios.post(route("logout"))
 		.then(() => {
-			dispatch("clearAuth")
+			dispatch("clearAuth");
 		})
 };
 
@@ -54,12 +54,12 @@ export const setToken = ({
 	if (isEmpty(token)) {
 		return dispatch("checkTokenExists")
 			.then((token) => {
-				setHttpToken(token)
+				setHttpToken(token);
 			})
 	}
 
-	commit("setToken", token)
-	setHttpToken(token)
+	commit("setToken", token);
+	setHttpToken(token);
 };
 
 export const checkTokenExists = ({
@@ -72,7 +72,7 @@ export const checkTokenExists = ({
 				return Promise.reject("NO_STORAGE_TOKEN");
 			}
 
-			return Promise.resolve(token)
+			return Promise.resolve(token);
 		})
 };
 
@@ -82,5 +82,5 @@ export const clearAuth = ({
 	commit("setAuthenticated", false);
 	commit("setUserData", null);
 	commit("setToken", null);
-	setHttpToken(null)
+	setHttpToken(null);
 };

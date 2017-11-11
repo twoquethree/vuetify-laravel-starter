@@ -1,4 +1,4 @@
 export {
 	default as routes
 }
-from "./routes"
+from "./routes";

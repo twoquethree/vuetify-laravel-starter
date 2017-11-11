@@ -22,7 +22,7 @@
   "dependencies": {
     "localforage": "^1.5.3",
     "vue-router": "^3.0.1",
-    "vuetify": "^0.16.8",
+    "vuetify": "^0.16.9",
     "vuex": "^3.0.1"
   }
 }

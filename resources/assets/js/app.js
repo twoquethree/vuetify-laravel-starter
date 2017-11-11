@@ -1,4 +1,3 @@
-import Vue from "vue";
 import router from "./router";
 import store from "./store";
 import "./bootstrap";
@@ -12,10 +11,10 @@ store.dispatch("auth/setToken")
 				router.replace({
 					name: "login"
 				})
-			})
+			});
 	})
 	.catch(function () {
-		store.dispatch("auth/clearAuth")
+		store.dispatch("auth/clearAuth");
 	});
 
 const app = new Vue({

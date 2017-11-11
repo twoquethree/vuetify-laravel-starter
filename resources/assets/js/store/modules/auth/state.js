@@ -3,4 +3,4 @@ export default {
 		authenticated: false,
 		data: null
 	}
-}
+};

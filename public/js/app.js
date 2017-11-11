@@ -3546,7 +3546,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 __WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch("auth/setToken").then(function () {
-	console.log('here');
 	__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch("auth/fetchUser").catch(function () {
 		__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch("auth/clearAuth");
 		__WEBPACK_IMPORTED_MODULE_1__router__["a" /* default */].replace({
@@ -6833,7 +6832,7 @@ var render = function() {
           _c(
             "v-layout",
             { staticClass: "h100", attrs: { "align-content-start": "" } },
-            [_c("h3", [_vm._v("Welcome to panel admin!")])]
+            [_c("h5", [_vm._v("Welcome to panel admin!")])]
           )
         ],
         1

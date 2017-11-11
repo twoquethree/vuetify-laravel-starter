@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import {
 	isEmpty
 } from "lodash";
@@ -26,7 +26,7 @@ export const login = ({
 			.catch((error) => {
 				context.errors = error.response.data.errors;
 				reject(error.response.data.errors);
-			})
+			});
 	});
 };
 

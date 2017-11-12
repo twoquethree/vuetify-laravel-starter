@@ -1,9 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons");
+@import "~vuetify/dist/vuetify.min.css";
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-// Variables
-@import "variables";
+html {
+  font-family: 'Roboto', sans-serif;
+  overflow-y: auto;
+}
 
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+.h-100 {
+  height: 100vh;
+}
